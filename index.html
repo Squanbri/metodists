@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="links">
+        <li class="links__item"><span onclick="modalOpen(modal)">Вход</span></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="lists-group">
+
+      <div class="lists-group__item">
+        <h3>Группы продуктов</h3>
+        <ul class="list__item" id="groups">
+
+        </ul>
+        <div class="input-group">
+          <input type="text" name="group">
+          <button name="insert-btn">&#43;</button>
+        </div>
+      </div>
+
+      <div class="lists-group__item">
+        <h3>Продукты</h3>
+        <ul class="list__item" id="products">
+        </ul>
+        <div class="input-group">
+          <input type="text" name="product">
+          <button name="insert-btn">&#43;</button>
+        </div>
+      </div>
+
+      <div class="lists-group__item">
+        <h3>Операции по созданию</h3>
+        <ul class="list__item" id="operations">
+        </ul>
+        <div class="input-group">
+          <input type="text" name="operation">
+          <button name="insert-btn">&#43;</button>
+        </div>
+      </div>
+
+      <div class="lists-group__item">
+        <h3>Навыки в рамках операции</h3>
+        <ul class="list__item" id="skills">
+          <li><span>Подбор скалки</span><img src="./assets/icons/quest.svg" alt="?" onclick="modalOpen(modalSkill)"></li>
+        </ul>
+        <div class="input-group">
+          <input type="text" name="skill">
+          <button name="insert-btn">&#43;</button>
+        </div>
+      </div>
+      
+    </section>
+    <form action="php/db.php" method="POST" class="modal">
+      <div class="modal__container">
+        <p>Вход</p>
+        <div class="modal__row">
+          <span>Логин: </span>
+          <input type="text" name="log">
+        </div>
+        <div class="modal__row">
+          <span>Пароль: </span>
+          <input type="text" name="pass">
+        </div>
+        <div class="modal__answer">
+          <button type="submit">Войти</button>
+          <span onclick="modalClose(modal)">Отмена</span>
+        </div>
+      </div>
+    </form>
+    <section class="modal" id="modal-skill">
+      <div class="modal__container">
+        <p>Подбор скалки</p>
+        <div class="modal__info">
+          <p>Для такого занятия нужно умело подобрать скалку, чтобы все было круто</p>
+          <button onclick="modalClose(modalSkill)">Понятно</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>

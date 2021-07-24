@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+:root {
+  --text: #2d2d2d;
+  --list-bg: #f7f8fc;
+  --nav-hover: rgb(226, 225, 225);
+  --item-active: rgba(0, 123, 255, 1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+}
+*:focus, *:active {
+  border: none;
+  outline: none;
+}
+
+header {
+  height: 75px;
+  width: 100%;
+  box-shadow: 0px 2px 10px grey;
+}
+.navbar {
+  height: 100%;
+}
+.links {
+  list-style-type: none;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+
+  height: 100%;
+  width: 90%;
+
+  margin: auto;
+}
+.links__item span {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+
+  width: 80px;
+
+  padding: 10px 5px;
+  
+  border-radius: 10px;
+  cursor: pointer;
+}
+.links__item span:hover {
+  background-color: var(--nav-hover);
+}
+
+main {
+  max-width: 1150px;
+  width: 100%;
+  margin: 200px auto;
+}
+.lists-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.lists-group__item {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 270px;
+}
+.lists-group__item:nth-child(4) {
+  width: 100%;
+  max-width: 330px;
+}
+.lists-group__item h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  opacity: 0.7;
+}
+.list__item {
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-weight: 500;
+
+  padding: 0 20px;
+
+  height: 400px;
+
+  list-style-type: none;
+  -webkit-user-select: none;
+  border-radius: 0px;
+  background-color: var(--list-bg);
+  box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.15);
+}
+/* .lists-group ul:nth-of-type(4) {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: red !important;
+}
+.lists-group ul:nth-of-type(2) {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: red !important;
+} */
+.list__item li {
+  display: flex;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  padding: 11px 10px 11px 15px;
+  margin: 1px 0;
+  
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  color: rgba(45, 45, 45, 0.8);
+}
+.list__item li:hover {
+  background-color: rgb(228, 237, 252);
+}
+.active {
+  background-color: var(--item-active) !important;
+  color: var(--list-bg) !important;
+}
+.list__item span {
+  width: 100%;
+  max-width: 230px;
+  overflow-x: hidden;
+}
+.list__item img {
+  margin-left: auto;
+}
+.input-group {
+  display: flex;
+  margin: 10px auto 0 auto;
+  border-bottom: 1px solid var(--item-active);
+  max-width: 320px;
+  width: 90%;;
+}
+.input-group input {
+  padding: 5px;
+  width: 90%;
+}
+.input-group button {
+  width: 10%;
+  font-size: 26px;
+  color: var(--item-active);
+  background: #fff;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(50, 50, 50, 0.25);
+}
+.modal__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 450px;
+  height: auto;
+
+  padding: 10px;
+
+  background: #fff;
+  border-radius: 8px;
+}
+.modal p {
+  font-weight: bold;
+  color: #2d2d2d;
+  font-size: 20px;
+  text-align: center;
+  margin: 15px 0;
+}
+.modal__row {
+  display: flex;
+  margin: 10px 0;
+}
+.modal__row span {
+  margin: auto 0;
+  width: 100px;
+}
+.modal__row input {
+  border-bottom: 1px solid var(--text);
+  font-size: 16px;
+  padding: 5px;
+}
+.modal__answer button, .modal__answer span {
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 14px;
+
+  width: 80px;
+
+  padding: 7px;
+  margin: 20px 10px;
+
+  cursor: pointer;
+  background-color: rgb(219, 216, 216);
+}
+.modal__info p {
+  font-size: 16px;
+  font-weight: normal;
+}
+.modal__info button {
+  display: block;
+  font-size: 16px;
+
+  width: auto;
+  height: auto;
+
+  padding: 10px;
+  margin: 30px auto;
+
+  cursor: pointer;
+  background-color: var(--item-active);
+  color: var(--list-bg);
+}
+@media screen and (max-width: 575px) {
+  .lists-group__item {
+    width: 90% !important;
+    margin-top: 30px;
+    max-width: 320px !important;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .lists-group__item {
+    max-width: 320px !important;
+    margin: 15px;
+  }
+  main {
+    margin: 50px auto;
+  }
+}
