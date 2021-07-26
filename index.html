@@ -3,93 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Опрос</title>
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="shortcut icon" href="./assets/images/apple-touch-icon.svg" type="image/png">
+  <link rel="stylesheet" href="./assets/css/jquery.fias.min.css">
+  <link rel="stylesheet" href="./assets/css/jquery-ui.min.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <ul class="links">
-        <li class="links__item"><span onclick="modalOpen(modal)">Вход</span></li>
+  <header class="container">
+    <img src="./assets/images/head_logo.png" class="header_logo">
+    <nav>
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="http://archksakhalin.ru/" class="menu__link">НАШ САЙТ</a>
+        </li>
       </ul>
     </nav>
   </header>
-  <main>
-    <section class="lists-group">
 
-      <div class="lists-group__item">
-        <h3>Группы продуктов</h3>
-        <ul class="list__item" id="groups">
+  <main class="container">
+    <section class="quiz">
+      <h1 class="quiz__header">ОПРОС</h1>
 
-        </ul>
-        <div class="input-group">
-          <input type="text" name="group">
-          <button name="insert-btn">&#43;</button>
-        </div>
+      <h4>Контактные данные</h4>
+
+      <div class="quiz__item w-100">
+        <label for="fio">Компания</label>
+        <input type="text" class="form-control" id="company" placeholder='ООО "Ресурсы"'>
       </div>
 
-      <div class="lists-group__item">
-        <h3>Продукты</h3>
-        <ul class="list__item" id="products">
-        </ul>
-        <div class="input-group">
-          <input type="text" name="product">
-          <button name="insert-btn">&#43;</button>
-        </div>
-      </div>
-
-      <div class="lists-group__item">
-        <h3>Операции по созданию</h3>
-        <ul class="list__item" id="operations">
-        </ul>
-        <div class="input-group">
-          <input type="text" name="operation">
-          <button name="insert-btn">&#43;</button>
-        </div>
-      </div>
-
-      <div class="lists-group__item">
-        <h3>Навыки в рамках операции</h3>
-        <ul class="list__item" id="skills">
-          <li><span>Подбор скалки</span><img src="./assets/icons/quest.svg" alt="?" onclick="modalOpen(modalSkill)"></li>
-        </ul>
-        <div class="input-group">
-          <input type="text" name="skill">
-          <button name="insert-btn">&#43;</button>
-        </div>
+      <div class="quiz__item w-100">
+        <label for="fio">ФИО</label>
+        <input type="text" class="form-control" id="fio" placeholder="Иванов Александр Алексеевич">
       </div>
       
-    </section>
-    <form action="php/db.php" method="POST" class="modal">
-      <div class="modal__container">
-        <p>Вход</p>
-        <div class="modal__row">
-          <span>Логин: </span>
-          <input type="text" name="log">
+      <div class="quiz__item w-100">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" placeholder="example@yandex.ru">
+      </div>
+
+      <div class="quiz__item w-100">
+        <label for="phone">Телефон</label>
+        <input type="text" class="form-control" id="phone" placeholder="8(999) 111-22-33">
+      </div>
+      
+      <div class="quiz__body">
+        <hr>
+        <h4>Вакансия 1</h4>
+
+        <div class="quiz__item w-100">
+          <label for="">Город</label>
+          <input type="text" class="city form-control" placeholder="Начните вводить город...">  <!-- Город -->
         </div>
-        <div class="modal__row">
-          <span>Пароль: </span>
-          <input type="text" name="pass">
+
+        <div class="quiz__item w-100">
+          <label for="department">Отрасль</label>
+          <input type="text" class="department form-control" placeholder="Строительство">  <!-- Город -->
         </div>
-        <div class="modal__answer">
-          <button type="submit">Войти</button>
-          <span onclick="modalClose(modal)">Отмена</span>
+
+        <div class="quiz__item">
+          <label for="">Вакансия</label>
+          <input type="text" class="specialty form-control specialty" placeholder="Сварщик">  <!-- Специальность -->
+        </div>
+
+        <div class="quiz__item">
+          <label for="">Количество сотрудников</label>
+          <input type="text" class="count form-control count" placeholder="5">  <!-- Количество сотрудников -->
+        </div>
+
+        <div class="quiz__item quiz__item_radio">
+          <label>Условия</label>
+          <div class="quiz__item_radio-body">
+            <div>
+              <input class="full-time" type="radio" name="time1" id="full-time1" checked>  <!-- Полная занятость -->
+              <label for="full-time1">Полная занятость</label>
+            </div>
+
+            <div>
+              <input class="part-time" type="radio" name="time1" id="part-time1">  <!-- Частичная занятость -->
+              <label for="part-time1">Частичная занятость</label>
+            </div>
+
+            <div class="d-flex self-time">
+              <input type="radio" name="time1" class="d-flex my-auto me-1 flex-time" id="flex-time1">  <!-- Гибкая занятость -->
+              <label for="flex-time1">Гибкий график</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz__item">
+          <label for="">Оплата</label>
+          <input type="text" class="payment form-control payment" placeholder="50 000 Р">  <!-- Оплата -->
+        </div>
+
+        <div class="quiz__item">
+          <label for="">Образование</label>
+          <input type="text" class="education form-control education" placeholder="Высшее">  <!-- Образование -->
+        </div>
+
+        <div class="quiz__item w-100">
+          <label for="">Опыт</label>
+          <select class="form-control experience">  <!-- Опыт -->
+            <option value="Не обязателен">Не обязателен</option>
+            <option value="Желателен">Желателен</option>
+            <option value="От 1 года">От 1 года</option>
+            <option value="От 1 до 3 лет">От 1 до 3 лет</option>
+            <option value="Более 3 лет">Более 3 лет</option>
+          </select>
+        </div>
+
+        <div class="quiz__item w-100">
+          <label for="">Описание вакансии</label>
+          <textarea class="form-control comment"></textarea>  <!-- Коментарии -->
+        </div>
+
+        <div class="quiz__item d-flex flex-column w-100">
+          <label for="students1">Готов сотрудничать с профессиональными образовательными организациями?</label>
+          <div class="d-flex self-time">
+            <input type="radio" name="students1" class="d-flex my-auto me-1 flex-time" id="students1-yes" checked>  <!-- Гибкая занятость -->
+            <label for="students1-yes" class="me-3">Да</label>
+            
+            <input type="radio" name="students1" class="d-flex my-auto me-1 flex-time" id="students1-no">  <!-- Гибкая занятость -->
+            <label for="students1-no">Нет</label>
+          </div>
         </div>
       </div>
-    </form>
-    <section class="modal" id="modal-skill">
+
+      <div class="d-flex">
+        <button class="add-person btn btn-success" id="addPerson">Добавить вакансию</button>
+      </div>
+      <button class="send btn btn-success" id="send">Отправить</button>
+    </section>
+
+    <section class="modal" id="modal">
       <div class="modal__container">
-        <p>Подбор скалки</p>
-        <div class="modal__info">
-          <p>Для такого занятия нужно умело подобрать скалку, чтобы все было круто</p>
-          <button onclick="modalClose(modalSkill)">Понятно</button>
+        <p>Вы успешно отправили заявку!</p>
+        <div class="modal__btn">
+          <button class="send btn btn-success" onclick="document.location.reload()">Закрыть</button>
         </div>
       </div>
     </section>
   </main>
-  
-  <script src="./assets/js/script.js"></script>
+
+  <footer>
+    <div class="footer container">
+      <div class="footer__header">
+        <span># Кадры Сахалина</span>
+      </div>
+      <div class="footer__body">
+        <div class="footer__info">
+          <div class="footer__item">
+            <img src="./assets/images/home.png" alt="">
+            <span>г. Южно-Сахалинск, ул. Комсомольская 259 В, офис 602</span>
+          </div>
+          <div class="footer__item">
+            <img src="./assets/images/phone.png" alt="">
+            <span>+7 (4242) 311-414</span>
+          </div>
+          <div class="footer__item">
+            <img src="./assets/images/comp.png" alt="">
+            <span>info@archksakhalin.ru</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
+<script src="./assets/script/jquery.min.js"></script>
+<script src="./assets/script/jquery.maskedinput.min.js"></script>
+<script src="./assets/script/jquery.fias.min.js"></script>
+<script src="./assets/script/jquery-ui.min.js"></script>
+<script src="./assets/script/index.js"></script>
 </html>
